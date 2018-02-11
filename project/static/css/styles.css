@@ -1,0 +1,70 @@
+/*Main*/
+
+body {
+    font: 12px/18px verdana, sans-serif;
+    letter-spacing: 0px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background: #fff url(../images/top_gradient.gif) repeat-x top left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+#content_wrapper {
+    margin: 20px 50px 50px 50px;
+}
+
+.content_list li {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+
+
+
+/* Navigation */
+ul#navlist {
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 30px;
+    white-space: nowrap;
+}
+
+#navlist li {
+    display: inline;
+    list-style-type: none;
+    font-size: 1.0em;
+    padding: 1px;
+}
+
+#navlist a {
+    padding: 2px 4px;
+}
+
+#navlist a:link, #navlist a:visited {
+    color: #fff;
+    background-color: #036;
+    text-decoration: none;
+}
+
+#navlist a:hover {
+    color: #fff;
+    background-color: #369;
+    text-decoration: none;
+}
+/* End navigation */
+
+
+
+ul.mainlist li {
+    font-size:1.1em;
+    font-weight:bold;
+    list-style:none;
+}
+
+

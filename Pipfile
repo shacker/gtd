@@ -1,0 +1,23 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+django = "*"
+django-extensions = "*"
+"1c129b5" = {path = "/Users/shacker/dev/django-todo", editable = true}
+django-todo = "*"
+"psycopg2" = "*"
+
+
+[dev-packages]
+
+
+
+[requires]
+
+python_version = "3.6"

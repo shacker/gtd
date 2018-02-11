@@ -1,0 +1,66 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title>{% block title %}{% endblock title %}</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+
+    <!-- jquery javascript for calendar widgets etc. -->
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+
+  {% block extrahead %}{% endblock extrahead %}
+</head>
+
+<body>
+  <div id="content_wrapper">
+
+      <div id="navcontainer">
+        <ul id="navlist">
+        	<li><a href="{% url 'todo:lists' %}">To-do Lists</a></li>
+        	<li><a href="{% url 'todo:mine' %}">My Tasks</a></li>
+
+          {% if user.is_staff %}
+      	    <li><a href="{% url 'admin:index' %}">Admin</a></li>
+          {% endif %}
+
+      		<form action="{% url 'todo:search' %}" method="get" accept-charset="utf-8" style="margin-top:15px;">
+        		<input type="text" name="q" value="" id="q">
+        		<input type="submit" value="Search Tasks" class="todo-button">
+        		<label for="inc_complete">Include completed tasks?</label>
+        		<select name="inc_complete" id="inc_complete">
+          		<option value="0" selected="selected">No</option>
+          		<option value="1">Yes</option>
+        		</select>
+      		</form>
+
+        </ul>
+      </div>
+
+      {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+      </ul>
+      {% endif %}
+
+      <p>{{ form.errors }}</p>
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+      <p>
+          {% if user.is_authenticated %}Logged in as {{ user.get_full_name }}<br />
+          {% endif %} Django-Todo &copy; Birdhouse Arts, {% now "Y" %}
+      </p>
+    {% endblock footer %}
+
+  </div>
+
+  {% block extra_js %}{% endblock extra_js %}
+</body>
+</html>
