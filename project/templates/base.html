@@ -26,7 +26,13 @@
           {% if user.is_staff %}
       	    <li><a href="{% url 'admin:index' %}">Admin</a></li>
           {% endif %}
-
+          
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+          {% else %}
+            <li><a href="{% url 'login' %}">Log In</a></li>
+          {% endif %}
+          
       		<form action="{% url 'todo:search' %}" method="get" accept-charset="utf-8" style="margin-top:15px;">
         		<input type="text" name="q" value="" id="q">
         		<input type="submit" value="Search Tasks" class="todo-button">

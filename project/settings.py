@@ -25,6 +25,8 @@ USE_I18N = True
 # STATIC_ROOT = '/Users/shacker/dev/gtd/project/static'
 STATIC_URL = "/static/"
 
+LOGIN_REDIRECT_URL = 'home'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
