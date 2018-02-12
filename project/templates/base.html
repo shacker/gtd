@@ -26,6 +26,9 @@
           {% if user.is_staff %}
       	    <li><a href="{% url 'admin:index' %}">Admin</a></li>
           {% endif %}
+
+          {# Simulate external user adding ticket #}
+          <li><a href="{% url 'todo:external_add' %}">File Ticket</a></li>
           
           {% if user.is_authenticated %}
             <li><a href="{% url 'logout' %}">Log Out</a></li>
@@ -33,7 +36,7 @@
             <li><a href="{% url 'login' %}">Log In</a></li>
           {% endif %}
           
-      		<form action="{% url 'todo:search' %}" method="get" accept-charset="utf-8" style="margin-top:15px;">
+      		<form action="{% url 'todo:search' %}" method="get" accept-charset="utf-8">
         		<input type="text" name="q" value="" id="q">
         		<input type="submit" value="Search Tasks" class="todo-button">
         		<label for="inc_complete">Include completed tasks?</label>
