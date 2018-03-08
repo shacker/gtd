@@ -1,7 +1,9 @@
 # Django settings for gtd project.
+import os
 
-DEBUG = True
+DEBUG = False
 
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -22,7 +24,6 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-# STATIC_ROOT = '/Users/shacker/dev/gtd/project/static'
 STATIC_URL = "/static/"
 
 LOGIN_REDIRECT_URL = 'home'
@@ -67,15 +68,15 @@ TODO_PUBLIC_SUBMIT_REDIRECT = '/'
 # Override in local.py :
 # ######################
 
-STATICFILES_DIRS = []
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'project', 'static'), ]
 
-# Make this unique, and don't share it with anybody.
+# Override in local
 SECRET_KEY = ''
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],  # Override in local
+        'DIRS': [os.path.join(BASE_DIR, 'project', 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
