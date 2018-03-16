@@ -1,75 +1,87 @@
 {% load staticfiles %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   <title>{% block title %}{% endblock title %}</title>
-   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/favicon.ico">
 
-    <!-- jquery javascript for calendar widgets etc. -->
-    <script
-      src="http://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
+    <title>Sticky Footer Navbar Template for Bootstrap</title>
 
-  {% block extrahead %}{% endblock extrahead %}
-</head>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<body>
-  <div id="content_wrapper">
+    <!-- Custom styles for this template -->
+    <link href="/static/css/sticky-footer-navbar.css" rel="stylesheet">
 
-      <div id="navcontainer">
-        <ul id="navlist">
-        	<li><a href="{% url 'todo:lists' %}">To-do Lists</a></li>
-        	<li><a href="{% url 'todo:mine' %}">My Tasks</a></li>
+    {# Additional CSS or html head data inserted by templates here. #}
+    {% block extrahead %}{% endblock extrahead %}
 
-          {% if user.is_staff %}
-      	    <li><a href="{% url 'admin:index' %}">Admin</a></li>
-          {% endif %}
+  </head>
 
-          {# Simulate external user adding ticket #}
-          <li><a href="{% url 'todo:external_add' %}">File Ticket</a></li>
-          
-          {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}">Log Out</a></li>
-          {% else %}
-            <li><a href="{% url 'login' %}">Log In</a></li>
-          {% endif %}
-          
-      		<form action="{% url 'todo:search' %}" method="get" accept-charset="utf-8">
-        		<input type="text" name="q" value="" id="q">
-        		<input type="submit" value="Search Tasks" class="todo-button">
-        		<label for="inc_complete">Include completed tasks?</label>
-        		<select name="inc_complete" id="inc_complete">
-          		<option value="0" selected="selected">No</option>
-          		<option value="1">Yes</option>
-        		</select>
-      		</form>
+  <body>
 
-        </ul>
-      </div>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="">django-todo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a href="{% url 'todo:lists' %}" class="nav-link">To-do Lists</a></li>
+              <li class="nav-item"><a href="{% url 'todo:mine' %}" class="nav-link">My Tasks</a></li>
+
+              {# Simulate external user adding ticket #}
+              <li class="nav-item"><a href="{% url 'todo:external_add' %}" class="nav-link">File Ticket</a></li>
+
+              {% if user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Log Out</a></li>
+              {% else %}
+                <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Log In</a></li>
+              {% endif %}
+          </ul>
+      		<form class="form-inline mt-2 mt-md-0" action="{% url 'todo:search' %}" method="get" placeholder="Search" aria-label="Search">
+              <input type="text" name="q" value="" class="form-control mr-sm-2" id="q">
+              <input type="submit" value="Search Tasks" class="btn btn-outline-success my-2 my-sm-0">
+            </form>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
 
       {% if messages %}
-      <ul class="messages">
+        <ul class="messages">
           {% for message in messages %}
             <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
           {% endfor %}
-      </ul>
+        </ul>
       {% endif %}
 
       <p>{{ form.errors }}</p>
 
-    {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
+    </main>
 
-    {% block footer %}
-      <p>
-          {% if user.is_authenticated %}Logged in as {{ user.get_full_name }}<br />
-          {% endif %} Django-Todo &copy; Birdhouse Arts, {% now "Y" %}
-      </p>
-    {% endblock footer %}
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">
+          django-dodo, {% now "Y" %}.
+          {% if user.is_authenticated %}Logged in as {{ user.username }}{% endif %}</span>
+      </div>
+    </footer>
 
-  </div>
+    <!-- jQuery and Bootstrap core JS, plus Popper -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-  {% block extra_js %}{% endblock extra_js %}
-</body>
+    {% block extra_js %}{% endblock extra_js %}
+
+  </body>
 </html>
