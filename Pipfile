@@ -11,7 +11,9 @@ django = "*"
 django-extensions = "*"
 "1c129b5" = {path = "/Users/shacker/dev/django-todo", editable = true}
 django-todo = "*"
-"psycopg2" = "*"
+pylint = "*"
+"psycopg2-binary" = "*"
+"flake8" = "*"
 
 
 [dev-packages]
