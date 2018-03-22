@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/static/favicon.ico">
 
-    <title>Sticky Footer Navbar Template for Bootstrap</title>
+    <title>Site Name</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -26,28 +26,28 @@
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="">django-todo</a>
+        <a class="navbar-brand" href="/">django-todo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
+            {% if user.is_authenticated %}
               <li class="nav-item"><a href="{% url 'todo:lists' %}" class="nav-link">To-do Lists</a></li>
               <li class="nav-item"><a href="{% url 'todo:mine' %}" class="nav-link">My Tasks</a></li>
-
+              <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Log Out</a></li>
               {# Simulate external user adding ticket #}
               <li class="nav-item"><a href="{% url 'todo:external_add' %}" class="nav-link">File Ticket</a></li>
 
-              {% if user.is_authenticated %}
-                <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Log Out</a></li>
-              {% else %}
-                <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Log In</a></li>
-              {% endif %}
+            {% else %}
+              <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Log In</a></li>
+            {% endif %}
+
           </ul>
       		<form class="form-inline mt-2 mt-md-0" action="{% url 'todo:search' %}" method="get" placeholder="Search" aria-label="Search">
-              <input type="text" name="q" value="" class="form-control mr-sm-2" id="q">
-              <input type="submit" value="Search Tasks" class="btn btn-outline-success my-2 my-sm-0">
-            </form>
+            <input type="text" name="q" value="" class="form-control mr-sm-2" id="q">
+            <input type="submit" value="Search Tasks" class="btn btn-outline-success my-2 my-sm-0">
+          </form>
         </div>
       </nav>
     </header>
@@ -56,11 +56,9 @@
     <main role="main" class="container">
 
       {% if messages %}
-        <ul class="messages">
-          {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-          {% endfor %}
-        </ul>
+        {% for message in messages %}
+          <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message|safe }}</div>
+        {% endfor %}
       {% endif %}
 
       <p>{{ form.errors }}</p>
