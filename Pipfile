@@ -15,6 +15,7 @@ pylint = "*"
 "psycopg2-binary" = "*"
 "flake8" = "*"
 pytest = "*"
+pytest-django = "*"
 
 
 [dev-packages]
