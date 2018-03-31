@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d74a44090a01e395e4377e82ccadaa1e46035e943ac62f8c71f12dcb4f3c3e86"
+            "sha256": "44a9e3e11c094a1103e4e2cadf28cb51776e0455322fe0bb8da333339bf4ca33"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -18,7 +18,7 @@
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.6"
+            "python_version": "3.5"
         },
         "sources": [
             {
@@ -29,10 +29,6 @@
         ]
     },
     "default": {
-        "1c129b5": {
-            "editable": true,
-            "path": "/Users/shacker/dev/django-todo"
-        },
         "astroid": {
             "hashes": [
                 "sha256:b76e5109ff0f386dd229673ca1323d21b1e9bb9c38eaed2cf830882dd7628be2",
@@ -232,13 +228,6 @@
                 "sha256:70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
             ],
             "version": "==1.11.0"
-        },
-        "unidecode": {
-            "hashes": [
-                "sha256:72f49d3729f3d8f5799f710b97c1451c5163102e76d64d20e170aedbbd923582",
-                "sha256:8c33dd588e0c9bc22a76eaa0c715a5434851f726131bd44a6c26471746efabf5"
-            ],
-            "version": "==1.0.22"
         },
         "wrapt": {
             "hashes": [
