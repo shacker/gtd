@@ -44,6 +44,9 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_SECURITY_WARN_AFTER = 5
 SESSION_SECURITY_EXPIRE_AFTER = 12
 
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
+WSGI_APPLICATION = 'project.wsgi.application'
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
