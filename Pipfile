@@ -9,17 +9,16 @@ name = "pypi"
 
 django = "*"
 django-extensions = "*"
-pylint = "*"
 "psycopg2-binary" = "*"
-"flake8" = "*"
-pytest = "*"
-pytest-django = "*"
 gunicorn = "*"
 
 
 [dev-packages]
 
-
+pylint = "*"
+"flake8" = "*"
+pytest = "*"
+pytest-django = "*"
 
 [requires]
 
