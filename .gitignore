@@ -1,5 +1,8 @@
 local.py
 
+# If we symlink in the todo project
+todo
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
