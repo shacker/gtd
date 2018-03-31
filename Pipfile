@@ -16,6 +16,7 @@ pylint = "*"
 "flake8" = "*"
 pytest = "*"
 pytest-django = "*"
+gunicorn = "*"
 
 
 [dev-packages]
