@@ -9,8 +9,6 @@ name = "pypi"
 
 django = "*"
 django-extensions = "*"
-"1c129b5" = {path = "/Users/shacker/dev/django-todo", editable = true}
-django-todo = "*"
 pylint = "*"
 "psycopg2-binary" = "*"
 "flake8" = "*"
