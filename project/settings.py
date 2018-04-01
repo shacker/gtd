@@ -65,7 +65,7 @@ INSTALLED_APPS = (
 TODO_PUBLIC_SUBMIT_REDIRECT = '/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'project', 'static'), ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles'), 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # ######################
 # Override in local.py :
