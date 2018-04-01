@@ -64,14 +64,13 @@ INSTALLED_APPS = (
 
 TODO_PUBLIC_SUBMIT_REDIRECT = '/'
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'project', 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles'), 
 
 # ######################
 # Override in local.py :
 # ######################
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'project', 'static'), ]
-
-# Override in local
 SECRET_KEY = ''
 
 TEMPLATES = [
@@ -97,3 +96,9 @@ TEMPLATES = [
 
 # Override in local.py
 DATABASES = {}
+
+# Todo-specific settings
+TODO_STAFF_ONLY = False
+TODO_DEFAULT_LIST_ID = None
+TODO_DEFAULT_ASSIGNEE = None
+TODO_PUBLIC_SUBMIT_REDIRECT = '/'
