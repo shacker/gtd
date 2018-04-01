@@ -22,10 +22,6 @@ SITE_ID = 1
 # to load the internationalization machinery.
 USE_I18N = True
 
-# Absolute path to the directory that holds media.
-# Example: "/home/media/media.lawrence.com/"
-STATIC_URL = "/static/"
-
 LOGIN_REDIRECT_URL = 'home'
 
 MIDDLEWARE = [
@@ -61,9 +57,7 @@ INSTALLED_APPS = (
     'django_extensions',
 )
 
-
-TODO_PUBLIC_SUBMIT_REDIRECT = '/'
-
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'project', 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
