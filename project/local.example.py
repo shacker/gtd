@@ -20,6 +20,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # TODO-specific settings
 TODO_STAFF_ONLY = False
-TODO_DEFAULT_LIST_ID = None
+TODO_DEFAULT_LIST_SLUG = 'tickets'
 TODO_DEFAULT_ASSIGNEE = None
 TODO_PUBLIC_SUBMIT_REDIRECT = '/'
