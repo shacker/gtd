@@ -1,11 +1,62 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %}django-todo{% endblock %} {% block content %}
 
-{% block title %}Home{% endblock %}
+<h1>django-todo</h1>
 
-{% block content %}
+<p>
+  django-todo is a
+  <i>pluggable</i>, multi-user, multi-group, multi-list todo and ticketing system - a <a href="https://docs.djangoproject.com/en/2.0/intro/reusable-apps/">reusable app</a> designed to be dropped into any existing Django project. Users can create tasks for themselves or for others, or create Unassigned tasks that will be filed into a specific list (public tickets).
+</p>
 
-   <h1>Home</h1>
+<div class="card mt-4">
+    <div class="card-header">
+        <h5>
+          Demo user logins
+        </h5>
+    </div>
+    <div class="card-body">
+      <p>
+        We provide a working implementation...
+      </p>
+        <ul>
+          <li>
+            To access todo lists for group Basket Weavers, log in as <code>user1</code> or <code>user2</code>
+          </li>
+        <li>
+          To access todo lists for group Scuba Divers, log in as <code>user3</code> or <code>user4</code>
+        </li>
+          <li>
+            To access all lists, login as user <code>staffer</code>
+          </li>
+          <li>
+              <b>The password for all demo users is <code>todo</code></b>
+          </li>
+        </ul>
+      <p>
+        <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
+      </p>
+    </div>
+  </div>
+  
+  <p class="mt-3">
+      Fake content on the demo site is refreshed every two hours. Notice that you can only see or write to tasks in the Django group(s) you belong to. 
+  </p>
 
-   <p>Dummy homepage. Your todo lists are probably <a href="{% url "todo:lists" %}">here</a>.</p>
+<p>
+  The demo site consists of two repos: <a href="https://github.com/shacker/gtd">GTD</a>, which is a basic Django site (the outer "shell"), which could easily be replaced with your own site, and the django-todo reusable app itself (<a href="https://github.com/shacker/django-todo">github</a>), which provides the main functionality.
+</p>
 
-{% endblock %}
+<p>
+  django-todo ships with a set of Bootstrap templates, which inherit from your site's <code>base.html</code>. The templates can easily be overridden with your own layout and styling preferences (even ditching Boostrap altogether if you like).
+</p>
+
+<p>
+  <b><a href="#">Full documentation</a> is at readthedocs.</b>
+</p>
+
+
+{% if user.is_authenticated %}
+  <p>
+    Your todo lists are
+    <a href="{% url " todo:lists " %}">here</a>.
+  </p>
+{% endif %} {% endblock %}
