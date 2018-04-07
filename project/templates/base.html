@@ -42,12 +42,15 @@
             {% else %}
               <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Log In</a></li>
             {% endif %}
-
           </ul>
-      		<form class="form-inline mt-2 mt-md-0" action="{% url 'todo:search' %}" method="get" placeholder="Search" aria-label="Search">
-            <input type="text" name="q" value="" class="form-control mr-sm-2" id="q">
-            <input type="submit" value="Search Tasks" class="btn btn-outline-success my-2 my-sm-0">
-          </form>
+          
+          {% if user.is_authenticated %}
+      		  <form class="form-inline mt-2 mt-md-0" action="{% url 'todo:search' %}" method="get" placeholder="Search" aria-label="Search">
+              <input type="text" name="q" value="" class="form-control mr-sm-2" id="q">
+              <input type="submit" value="Search Tasks" class="btn btn-outline-success my-2 my-sm-0">
+            </form>            
+          {% endif %}
+
         </div>
       </nav>
     </header>
