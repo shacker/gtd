@@ -74,7 +74,7 @@
         {% endfor %}
       {% endif %}
 
-      <p>{{ form.errors }}</p>
+      <p>{{ form.non_field_errors }}</p>
 
       {% block content %}{% endblock %}
     </main>
