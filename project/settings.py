@@ -22,6 +22,7 @@ SITE_ID = 1
 # to load the internationalization machinery.
 USE_I18N = True
 
+LOGIN_URL = "/login"
 LOGIN_REDIRECT_URL = 'home'
 
 MIDDLEWARE = [
