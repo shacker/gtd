@@ -48,17 +48,18 @@
               <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Log Out</a></li>
               {# Simulate external user adding ticket #}
               <li class="nav-item"><a href="{% url 'todo:external_add' %}" class="nav-link">File Ticket</a></li>
+              <li class="nav-item"><a href="{% url 'todo:import_csv' %}" class="nav-link">Import</a></li>
 
             {% else %}
               <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Log In</a></li>
             {% endif %}
           </ul>
-          
+
           {% if user.is_authenticated %}
       		  <form class="form-inline mt-2 mt-md-0" action="{% url 'todo:search' %}" method="get" placeholder="Search" aria-label="Search">
               <input type="text" name="q" value="" class="form-control mr-sm-2" id="q">
               <input type="submit" value="Search Tasks" class="btn btn-outline-success my-2 my-sm-0">
-            </form>            
+            </form>
           {% endif %}
 
         </div>
