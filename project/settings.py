@@ -1,6 +1,8 @@
 # Django settings for gtd project.
 import os
 
+from django.contrib.messages import constants as message_constants
+
 DEBUG = False
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -90,6 +92,9 @@ TEMPLATES = [
         },
     },
 ]
+
+# Override CSS class for the ERROR tag level to match Bootstrap class name
+MESSAGE_TAGS = {message_constants.ERROR: "danger"}
 
 # Override in local.py
 DATABASES = {}
