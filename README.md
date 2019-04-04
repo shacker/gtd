@@ -36,3 +36,6 @@ Then:
 
 See additional instructions in the django-todo README.
 
+## Deploy via fabric
+
+TK...
