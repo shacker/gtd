@@ -62,9 +62,16 @@ INSTALLED_APPS = (
     'django_extensions',
 )
 
+# Static files and uploads
+
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'project', 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Uploaded media
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
+
 
 # ######################
 # Override in local.py :
@@ -92,6 +99,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 # Override CSS class for the ERROR tag level to match Bootstrap class name
 MESSAGE_TAGS = {message_constants.ERROR: "danger"}
