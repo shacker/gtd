@@ -9,9 +9,9 @@ django-extensions = "*"
 gunicorn = "*"
 factory-boy = "*"
 titlecase = "*"
-django = "*"
 bleach = "*"
 django-todo = "*"
+django = "==2.1.8"
 
 [dev-packages]
 pylint = "*"
