@@ -11,7 +11,7 @@ factory-boy = "*"
 titlecase = "*"
 bleach = "*"
 django = "==2.1.8"
-django-todo = "==2.4.2"
+django-todo = "==2.4.4"
 
 [dev-packages]
 pylint = "*"
