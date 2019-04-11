@@ -72,6 +72,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
+# Without this, uploaded files > 4MB end up with perm 0600, unreadable by web server process
+FILE_UPLOAD_PERMISSIONS = 0o644
 
 # ######################
 # Override in local.py :
