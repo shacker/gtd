@@ -10,8 +10,9 @@ gunicorn = "*"
 factory-boy = "*"
 titlecase = "*"
 bleach = "*"
-django = "==2.1.8"
-django-todo = "==2.4.4"
+django = "==2.2.3"
+django-todo = "==2.4.8"
+# django-todo = {editable = true, path = "/Users/shacker/dev/django-todo"}
 
 [dev-packages]
 pylint = "*"
