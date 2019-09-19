@@ -11,8 +11,7 @@ factory-boy = "*"
 titlecase = "*"
 bleach = "*"
 django = "==2.2.3"
-django-todo = "==2.4.8"
-# django-todo = {editable = true, path = "/Users/shacker/dev/django-todo"}
+django-todo = "*"
 
 [dev-packages]
 pylint = "*"
