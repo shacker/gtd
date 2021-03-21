@@ -14,7 +14,7 @@ pip3 install --user git+https://github.com/pypa/pipenv.git
 cd ~/dev
 git clone git@github.com:shacker/gtd.git
 cd gtd
-pipenv --python 3.6   # Initializes the virtual environment
+pipenv --python 3.9   # Initializes the virtual environment
 pipenv install --dev  # Installs all dependencies
 pipenv shell  # Activates the environment
 ```
