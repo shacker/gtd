@@ -110,3 +110,5 @@ ENV/
 
 # Media
 media/*
+# Ignore logs from simple_deploy.
+simple_deploy_logs/
