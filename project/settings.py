@@ -115,3 +115,4 @@ DATABASES = {}
 # TODO_PUBLIC_SUBMIT_REDIRECT = '/'
 # TODO_ALLOW_FILE_ATTACHMENTS = True
 # TODO_LIMIT_FILE_ATTACHMENTS = [".jpg", ".gif", ".png", ".csv", ".pdf"]
+# TODO_GROUPS_MODEL = ""

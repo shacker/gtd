@@ -1,0 +1,11 @@
+django-extensions
+psycopg2-binary
+gunicorn
+factory-boy
+bleach
+django
+django-todo
+pylint
+flake8
+pytest-django
+mypy
