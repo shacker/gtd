@@ -1,11 +1,12 @@
 # Django settings for gtd project.
 import os
+from pathlib import Path
 
 from django.contrib.messages import constants as message_constants
 
 DEBUG = False
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -59,6 +60,9 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     "todo",
     "django_extensions",
+    "dal",
+    "dal_select2",
+    "simple_deploy",
 )
 
 # Static files and uploads
