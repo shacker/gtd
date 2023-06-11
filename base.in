@@ -2,6 +2,7 @@ bleach
 django
 django-extensions
 django-simple-deploy
+dj-database-url
 django-todo
 factory-boy
 flake8
