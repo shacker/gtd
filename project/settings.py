@@ -1,7 +1,6 @@
 # Django settings for gtd project.
 import os
 from pathlib import Path
-import dj_database_url
 from django.contrib.messages import constants as message_constants
 
 DEBUG = False
@@ -110,9 +109,17 @@ TEMPLATES = [
 # Override CSS class for the ERROR tag level to match Bootstrap class name
 MESSAGE_TAGS = {message_constants.ERROR: "danger"}
 
-# fly.io puts the db URL in environment variable
-DATABASES = {"default": dj_database_url.parse(os.environ['DATABASE_URL'])}
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gtd',
+        'USER': 'you',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '',
+    },
+}
 
 # Todo-specific settings
 # TODO_STAFF_ONLY = False
