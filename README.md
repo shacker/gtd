@@ -8,56 +8,40 @@ well).
 
 ## Installation
 
-`clone` the repository and use `pipenv` to create the virtual environment and install the
-dependencies. The instructions below assume you are using sqlite as your database, `~/dev` as your
-development directory, and venv as your environment manager. Modify as needed.
+Requires [uv](https://docs.astral.sh/uv/). Clone the repo, then:
 
 ```
 cd ~/dev
 git clone git@github.com:shacker/gtd.git
 cd gtd
-python3.11 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+uv sync
 ```
 
-Copy `local.example.py` to `local.py` and modify to match your local db credentials. In `local.py`:
+Copy `project/local.example.py` to `project/local.py` and update with your local db credentials
+and a `SECRET_KEY`. Then:
 
 ```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+createdb gtd
+uv run manage.py migrate
+uv run manage.py createsuperuser
+uv run manage.py runserver
 ```
-
-Then:
-
-`./manage.py migrate`
 
 See additional instructions in the django-todo README.
 
 
 ## Dependencies
 
-To add, remove, or change the project's Python dependencies, edit `base.in`, then recompile
-requirements.txt for the changed package:
+Dependencies are declared in `pyproject.toml` and locked in `uv.lock`. To add or remove packages:
 
 ```
-pip-compile --generate-hashes --output-file=requirements.txt -P <package-name> requirements/base.in
+uv add <package>
+uv remove <package>
 ```
 
-(specify `-P <package_name>`)
-
-ie. to update to a newer Django version, edit base.in, then:
+To upgrade all packages to their latest allowed versions:
 
 ```
-pip-compile --generate-hashes --output-file=requirements.txt -P django base.in
-```
-
-To generate new/fresh hash files, delete both .txt files then run the commands without specifying a package:
-
-```
-pip-compile --generate-hashes --verbose --output-file=requirements.txt base.in
+uv lock --upgrade
+uv sync
 ```

@@ -1,0 +1,22 @@
+[project]
+name = "gtd"
+version = "0.1.0"
+description = "Container/stub site for django-todo"
+requires-python = ">=3.11"
+dependencies = [
+    "bleach",
+    "dj-database-url",
+    "django",
+    "django-autocomplete-light",
+    "django-extensions",
+    "django-simple-deploy",
+    "django-todo",
+    "factory-boy",
+    "flake8",
+    "gunicorn",
+    "mypy",
+    "psycopg2-binary",
+    "pylint",
+    "pytest",
+    "pytest-django",
+]
