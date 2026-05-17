@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(uv init *)"
+      "Bash(uv init *)",
+      "Bash(.venv/bin/pip show *)",
+      "Bash(uv run *)",
+      "Bash(uv remove *)"
     ]
   }
 }

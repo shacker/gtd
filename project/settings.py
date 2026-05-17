@@ -62,7 +62,6 @@ INSTALLED_APPS = (
     "django_extensions",
     "dal",
     "dal_select2",
-    "simple_deploy",
 )
 
 # Static files and uploads

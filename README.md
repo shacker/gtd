@@ -30,6 +30,18 @@ uv run manage.py runserver
 See additional instructions in the django-todo README.
 
 
+## Local django-todo development
+
+`pyproject.toml` points `django-todo` at a local editable install (`../django-todo`) via
+`[tool.uv.sources]`. This lets you work on the library and see changes reflected immediately.
+
+On the server, bypass the local source and install from PyPI instead:
+
+```
+uv sync --no-sources
+```
+
+
 ## Dependencies
 
 Dependencies are declared in `pyproject.toml` and locked in `uv.lock`. To add or remove packages:

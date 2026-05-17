@@ -9,7 +9,6 @@ dependencies = [
     "django",
     "django-autocomplete-light",
     "django-extensions",
-    "django-simple-deploy",
     "django-todo",
     "factory-boy",
     "flake8",
@@ -20,3 +19,6 @@ dependencies = [
     "pytest",
     "pytest-django",
 ]
+
+[tool.uv.sources]
+django-todo = { path = "../django-todo", editable = true }
