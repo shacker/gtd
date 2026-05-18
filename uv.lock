@@ -170,7 +170,7 @@ wheels = [
 [[package]]
 name = "django-todo"
 version = "2.5.0"
-source = { editable = "../django-todo" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "bleach" },
     { name = "django", version = "5.2.14", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
@@ -180,16 +180,7 @@ dependencies = [
     { name = "html2text" },
     { name = "titlecase" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "bleach" },
-    { name = "django", specifier = ">=4.0" },
-    { name = "django-autocomplete-light" },
-    { name = "factory-boy" },
-    { name = "html2text" },
-    { name = "titlecase" },
-]
+sdist = { url = "https://files.pythonhosted.org/packages/60/58/57f17b341d8799369cd373dc5fdb9f4fa57e42cf669304a7224362460ce9/django-todo-2.5.0.tar.gz", hash = "sha256:faf17048caef44959f11b13d25a3510c0b281c12dbd45829b7a8fbe08fdd868b", size = 54975, upload-time = "2022-11-03T06:15:36.287Z" }
 
 [[package]]
 name = "factory-boy"
@@ -258,7 +249,7 @@ requires-dist = [
     { name = "django" },
     { name = "django-autocomplete-light" },
     { name = "django-extensions" },
-    { name = "django-todo", editable = "../django-todo" },
+    { name = "django-todo" },
     { name = "factory-boy" },
     { name = "flake8" },
     { name = "gunicorn" },

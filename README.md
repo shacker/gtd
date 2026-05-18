@@ -35,10 +35,10 @@ See additional instructions in the django-todo README.
 `pyproject.toml` points `django-todo` at a local editable install (`../django-todo`) via
 `[tool.uv.sources]`. This lets you work on the library and see changes reflected immediately.
 
-On the server, bypass the local source and install from PyPI instead:
+On the server, install normally — the committed lock file references PyPI:
 
 ```
-uv sync --no-sources
+uv sync
 ```
 
 
