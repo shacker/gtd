@@ -32,14 +32,16 @@ See additional instructions in the django-todo README.
 
 ## Local django-todo development
 
-`pyproject.toml` points `django-todo` at a local editable install (`../django-todo`) via
-`[tool.uv.sources]`. This lets you work on the library and see changes reflected immediately.
+To work on django-todo locally, clone it alongside this repo and add this to `project/local.py`
+(which is gitignored):
 
-On the server, install normally — the committed lock file references PyPI:
+```python
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "django-todo"))
+```
 
-```
-uv sync
-```
+This makes Python find the local clone before the PyPI-installed version. The server is unaffected.
 
 
 ## Dependencies

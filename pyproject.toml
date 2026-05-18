@@ -20,5 +20,3 @@ dependencies = [
     "pytest-django",
 ]
 
-[tool.uv.sources]
-django-todo = { path = "../django-todo", editable = true }
