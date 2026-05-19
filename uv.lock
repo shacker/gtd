@@ -169,7 +169,7 @@ wheels = [
 
 [[package]]
 name = "django-todo"
-version = "2.5.3"
+version = "2.5.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "bleach" },
@@ -180,9 +180,9 @@ dependencies = [
     { name = "html2text" },
     { name = "titlecase" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/65/b9/4cbf10bde3175b63831bef451dab8f2a0eb705589557e0f01cb7e6e243cf/django_todo-2.5.3.tar.gz", hash = "sha256:392fdeddaf88ac31705d7a8f18c26b3f2d16bcd7028cafb39b3737200ed934ff", size = 53599, upload-time = "2026-05-18T06:46:00.413Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a6/eb/5003cf2a3d1c674f113052881f54710a690f443fbc442f9389c795e83a67/django_todo-2.5.4.tar.gz", hash = "sha256:28e9500eee93a5ec4fa9e94e5535e188fb958caf6f3abf8c99b35c6baffe4fae", size = 54166, upload-time = "2026-05-19T07:04:03.041Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/7a/8a/4772e2112ced618885995c8582664b334f8ec476eaf1911afd437a462180/django_todo-2.5.3-py3-none-any.whl", hash = "sha256:920a93e6148a8844fb108de17537c7564dca42167a6bf29fa8aeb85cb1a10c42", size = 74982, upload-time = "2026-05-18T06:45:58.805Z" },
+    { url = "https://files.pythonhosted.org/packages/a2/43/081f94f0489aeb6316b3ee03c5a9251e17f2018f0fa15bddcc9a042613e1/django_todo-2.5.4-py3-none-any.whl", hash = "sha256:4590cde0615c1c0bbb43b70e7a3ccf94e9ee2a9ed3a7a8bb8a4de950d9c2338e", size = 76056, upload-time = "2026-05-19T07:04:01.373Z" },
 ]
 
 [[package]]
