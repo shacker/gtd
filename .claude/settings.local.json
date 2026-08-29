@@ -4,7 +4,9 @@
       "Bash(uv init *)",
       "Bash(.venv/bin/pip show *)",
       "Bash(uv run *)",
-      "Bash(uv remove *)"
+      "Bash(uv remove *)",
+      "Bash(.venv/bin/pytest todo/tests/ -x -q)",
+      "Bash(python -m pytest todo/tests/ -x -q)"
     ]
   }
 }

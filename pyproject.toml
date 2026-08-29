@@ -2,7 +2,7 @@
 name = "gtd"
 version = "0.1.0"
 description = "Container/stub site for django-todo"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
     "bleach",
     "dj-database-url",
