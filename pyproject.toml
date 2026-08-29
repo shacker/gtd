@@ -6,7 +6,7 @@ requires-python = ">=3.12"
 dependencies = [
     "bleach",
     "dj-database-url",
-    "django",
+    "django>=5.2,<6",
     "django-autocomplete-light",
     "django-extensions",
     "django-todo",
